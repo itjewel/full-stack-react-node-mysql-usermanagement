@@ -1,6 +1,11 @@
 # full-stack-react-node-mysql-usermanagement
-# Using: Reactjs 17.0.2, Node.js 16.13.2 & database mysql
-After Download Project
+# Using: 
+- ReactJS 17.0.2
+- NodeJS
+- ExpressJS
+- MySQL
+- Sequelize
+
 # Font-end :
 1. Folder name client
 2. Please check node version must be need minimum node version 14.0
