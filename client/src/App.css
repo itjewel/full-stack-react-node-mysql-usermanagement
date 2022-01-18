@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.post{
+  width: 400px;
+    border: 1px solid gray;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+.title{
+  background: gray;
+  padding: 7px;
+  font-size: 27px;
+  color: #fff;
+}
+.body{
+  padding: 30px;
+    font-size: 23px;
+}
+
+.footer{
+  background: gray;
+  padding: 7px;
+  font-size: 27px;
+  color: #fff;
+}
