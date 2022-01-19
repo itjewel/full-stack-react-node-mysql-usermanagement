@@ -13,7 +13,7 @@
 5. npm install
 6. npm start
 
-*uses library in reactjs 
+# library use in react.js
   - Formik using for Form creation
   - Yup use for user validation
 
