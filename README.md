@@ -13,6 +13,10 @@
 5. npm install
 6. npm start
 
+*uses library in reactjs 
+  - Formik using for Form creation
+  - Yup use for user validation
+
 # Back-end :
 1. Folder name server
 2. Please check node version must be need minimum node version 14.0
