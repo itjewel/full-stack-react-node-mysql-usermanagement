@@ -7,6 +7,12 @@ const { Posts } = require('../models')
   res.json(postList)
  });
 
+ router.get("/byId/:id", async (req, res)=> {
+   let paramId = req.params.id
+    const postData = await Posts.findByPk(paramId);
+    res.json(postData);
+ })
+
 router.post('/', async (req, res) => {
   const postData = req.body
   await Posts.create(postData)

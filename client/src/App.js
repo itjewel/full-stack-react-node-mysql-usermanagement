@@ -9,6 +9,7 @@ import {
 import './App.css';
 import Home from './Pages/Home';
 import CreatePost from './Pages/CreatePost';
+import Post from './Pages/Post';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
      <Routes>
        <Route path="/" exact element={ <Home /> } />
        <Route path="/createpost" exact element={ <CreatePost/>} />
+       <Route path="/post/:id" exact element={ <Post/>} />
      </Routes>
    </Router>
   
