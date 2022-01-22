@@ -7,14 +7,14 @@ let navigate = useNavigate()
 
 const [listOfPosts, setlistOfPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
+    axios.get("http://localhost:3001/posts", {headers:{accessToken: localStorage.getItem('accessToken')}}).then((response) => {
       setlistOfPosts(response.data)
       //  console.log(response.data)
 
     });
   }, [])
 
-  return <div>
+  return <div><br/>
       {listOfPosts.map((value,index) => {
     return <div className='post' key={index}>
         <div className='title' onClick={ () => { navigate(`/post/${value.id}`) } }> {value.title}</div>

@@ -31,3 +31,24 @@
 span {
   color:red;
 }
+
+.leftSide{
+  float:left;
+}
+.rightSide{
+  float:left;
+ 
+}
+.commentSection{
+  border:1px solid gray;
+  padding:10px;
+  margin: 10px 0px 10px 15px;
+
+}
+.addCommentContainer{
+  margin: 30px 10px 20px 15px;
+}
+
+.logOutButton{
+  cursor: pointer;
+}

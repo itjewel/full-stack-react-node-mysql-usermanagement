@@ -25,8 +25,9 @@ function CreatePost() {
     }
 
   return <div className='createPostPage'>
+        <h2>Create Post Form</h2>
       <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-          <Form><br/><br/>
+          <Form>
               <label>Title: </label>
               <ErrorMessage name="title" component="span"/><br/>
               <Field  name="title" placeholder="Please Enter title"/>
