@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const { Posts } = require('../models')
+const { Posts, Likes } = require('../models')
 
  router.get('/', async (req, res) => {
-  const postList = await Posts.findAll();
+  const postList = await Posts.findAll({include: [Likes]});
   res.json(postList)
  });
 

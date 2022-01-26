@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
+import { AuthContext } from '../helpers/AuthContext'
 
 function Post() {
     let { id } = useParams()
     const [postObject, setPostObject] = useState({})
     const [listOfComments, setListOfComments] = useState([])
     const [newComment, setNewComment] = useState("")
+    const { authState } = useContext(AuthContext)
     useEffect( () => {
         axios.get(`http://localhost:3001/posts/byId/${id}`).then( (response) => {
             setPostObject(response.data);
@@ -21,16 +23,25 @@ function Post() {
 
     const addComment = () =>{
         let data = {commentBody:newComment,PostId:id}
-        axios.post(" http://localhost:3001/comments", data, {headers : {accessToken: localStorage.getItem('accessToken') }}).then( (response) => {           
+        axios.post("http://localhost:3001/comments", data, {headers : {accessToken: localStorage.getItem('accessToken') }}).then( (response) => {           
           if(response.data.error){
               alert("User doesn't loged in!")
             //   alert(response.data.error)
           }else{
-              let addComment = {commentBody:newComment,username:response.data.username}
-            setListOfComments([...listOfComments,addComment])
+              let addCommentValue = {commentBody:newComment,id:response.data.id,username:response.data.username}
+            setListOfComments([...listOfComments, addCommentValue])
             setNewComment("")
           }          
         });
+    }
+
+    const deleteComment = (paramId) => {
+      // alert(paramId)
+      axios.delete(`http://localhost:3001/comments/${paramId}`, {headers : {accessToken: localStorage.getItem('accessToken') }}).then((response) => {
+        setListOfComments(listOfComments.filter((val) => {
+          return val.id != paramId
+        }))
+      })
     }
 
   return <div> 
@@ -50,7 +61,11 @@ function Post() {
               {listOfComments.map((value, key) =>{
              return <div className="commentSection" key={key}>
                 <div className='body'> {value.commentBody}</div>
-                <div className='footer'> {value.username}</div>
+                <div className='footer'> {value.username}<br/>
+                {authState.username == value.username && (
+                  <button onClick={() => { deleteComment(value.id) }}>Delete</button>
+                )}
+                </div>
               </div>
              })}
           </div>
