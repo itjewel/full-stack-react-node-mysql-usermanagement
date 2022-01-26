@@ -5,6 +5,8 @@
 - ExpressJS
 - MySQL
 - Sequelize
+- Axios
+- JWT Auth
 
 # Font-end :
 1. Folder name client
