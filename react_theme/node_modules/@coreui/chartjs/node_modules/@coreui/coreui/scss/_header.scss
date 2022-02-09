@@ -1,0 +1,170 @@
+.header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  min-height: $header-min-height;
+  padding: $header-padding-y $header-padding-x;
+  background: var(--#{$variable-prefix}header-bg, $header-bg);
+  border-bottom: var(--#{$variable-prefix}header-border-width, $header-border-width) solid var(--#{$variable-prefix}header-border-color, $header-border-color);
+
+  // Because flex properties aren't inherited, we need to redeclare these first
+  // few properties so that content nested within behave properly.
+  // The `flex-wrap` property is inherited to simplify the expanded navbars
+  %container-flex-properties {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  > .container,
+  > .container-fluid {
+    @extend %container-flex-properties;
+  }
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
+      @extend %container-flex-properties;
+    }
+  }
+
+  .container:first-child,
+  .container-fluid:first-child {
+    min-height: $header-min-height - (2 * $header-padding-y);
+  }
+
+  .container:nth-child(n+2),
+  .container-fluid:nth-child(n+2) {
+    min-height: $subheader-min-height - (2 * $header-padding-y);
+  }
+
+  &.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: $zindex-fixed - 1;
+  }
+}
+
+.header-divider {
+  flex-basis: calc(100% + #{2 * $header-padding-x}); // stylelint-disable-line function-disallowed-list
+  height: 0;
+  margin: $header-padding-y (- $header-padding-x);
+  border-top: var(--#{$variable-prefix}header-divider-border-width, $header-divider-border-width) solid var(--#{$variable-prefix}header-divider-border-color, $header-divider-border-color);
+}
+
+// Header brand
+//
+// Used for brand, project, or site names.
+
+.header-brand {
+  padding-top: $header-brand-padding-y;
+  padding-bottom: $header-brand-padding-y;
+  @include ltr-rtl("margin-right", $header-brand-margin-end);
+  @include font-size($header-brand-font-size);
+  color: var(--#{$variable-prefix}header-brand-color, $header-brand-color);
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    color: var(--#{$variable-prefix}header-brand-hover-color, $header-brand-hover-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+}
+
+// Header nav
+//
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.header-nav {
+  display: flex;
+  flex-direction: row; // cannot use `inherit` to get the `.header`s value
+  @include ltr-rtl("padding-left", 0);
+  margin-bottom: 0;
+  list-style: none;
+
+  .nav-link {
+    padding-right: $header-nav-link-padding-x;
+    padding-left: $header-nav-link-padding-x;
+    color: var(--#{$variable-prefix}header-color, $header-color);
+
+    &:hover,
+    &:focus {
+      color: var(--#{$variable-prefix}header-hover-color, $header-hover-color);
+    }
+
+    &.disabled {
+      color: var(--#{$variable-prefix}header-disabled-color, $header-disabled-color);
+    }
+  }
+
+  .show > .nav-link,
+  .nav-link.active {
+    color: var(--#{$variable-prefix}header-active-color, $header-active-color);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+  }
+}
+
+
+// Header text
+//
+//
+
+.header-text {
+  padding-top: $nav-link-padding-y;
+  padding-bottom: $nav-link-padding-y;
+  color: var(--#{$variable-prefix}header-color, $header-color);
+
+  a {
+    color: var(--#{$variable-prefix}header-active-color, $header-active-color);
+
+    &:hover,
+    &:focus {
+      color: var(--#{$variable-prefix}header-active-color, $header-active-color);
+    }
+  }
+}
+
+.header-toggler {
+  // min-width: 50px;
+  padding: $header-toggler-padding-y $header-toggler-padding-x;
+  @include font-size($header-toggler-font-size);
+  color: var(--#{$variable-prefix}header-color, $header-color);
+  background-color: var(--#{$variable-prefix}header-toggler-bg, $header-toggler-bg);
+  border: 0; // remove default button style
+  // @include borders($header-toggler-border);
+  @include border-radius($header-toggler-border-radius);
+  // border-color: var(--#{$variable-prefix}header-toggler-border-color, $header-toggler-border-color);
+
+  &:hover {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .navbar-toggler elements
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.header-toggler-icon {
+  display: block;
+  height: $header-toggler-font-size * 1.25;
+  background-image: var(--#{$variable-prefix}header-toggler-icon-bg, escape-svg($header-toggler-icon-bg));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+
+  &:hover {
+    background-image: var(--#{$variable-prefix}header-toggler-hover-icon-bg, escape-svg($header-toggler-hover-icon-bg));
+  }
+}

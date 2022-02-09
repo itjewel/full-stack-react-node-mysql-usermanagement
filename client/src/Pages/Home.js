@@ -4,14 +4,19 @@ import { useNavigate } from 'react-router-dom'
 
 function Home() {
 let navigate = useNavigate()
-
 const [listOfPosts, setlistOfPosts] = useState([]);
+const [likedPosts, setLikedPosts] = useState([]);
+
   useEffect(() => {
     axios.get("http://localhost:3001/posts", {headers:{accessToken: localStorage.getItem('accessToken')}}).then((response) => {
-      setlistOfPosts(response.data)
-      //  console.log(response.data)
+      setlistOfPosts(response.data.postList)
+      setLikedPosts(response.data.likedPost.map((like) => {
+        return like.PostId
+      }))
 
+        
     });
+
   }, [])
 
 const likeAPost = (postId) => {
@@ -30,6 +35,15 @@ const likeAPost = (postId) => {
         return post;
       }
     }))
+    if(likedPosts.includes(postId)){
+      setLikedPosts(
+        likedPosts.filter((id) => {
+          return id != postId
+        })
+      ) 
+    }else{
+      setLikedPosts([...likedPosts, postId])
+    }
   // alert(response.data)
   })
 }
@@ -40,7 +54,9 @@ const likeAPost = (postId) => {
         <div className='title' onClick={ () => { navigate(`/post/${value.id}`) } }> {value.title}</div>
         <div className='body'> {value.postText}</div>
         <div className='footer'> {value.username}
-        <button onClick={() => { likeAPost(value.id)}}>Like</button>
+        <button onClick={() => { likeAPost(value.id)}}>
+         { likedPosts.includes(value.id)? "Unlike": "Like "}
+          </button>
         <label>{value.Likes.length}</label>
         </div>
       </div>

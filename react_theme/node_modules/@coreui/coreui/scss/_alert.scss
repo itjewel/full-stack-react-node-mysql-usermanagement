@@ -1,0 +1,52 @@
+//
+// Base styles
+//
+
+.alert {
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  color: var(--#{$variable-prefix}alert-color);
+  @include gradient-bg(var(--#{$variable-prefix}alert-bg));
+  border: $alert-border-width solid var(--#{$variable-prefix}alert-border-color, transparent);
+  @include border-radius($alert-border-radius);
+}
+
+// Headings for larger alerts
+.alert-heading {
+  // Specified to prevent conflicts of changing $headings-color
+  color: inherit;
+}
+
+// Provide class for links that match alerts
+.alert-link {
+  font-weight: $alert-link-font-weight;
+  color: var(--#{$variable-prefix}alert-link-color);
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissible {
+  @include ltr-rtl("padding-right", $alert-dismissible-padding-r);
+
+  // Adjust close link position
+  .btn-close {
+    position: absolute;
+    top: 0;
+    @include ltr-rtl("right", 0);
+    z-index: $stretched-link-z-index + 1;
+    padding: $alert-padding-y * 1.25 $alert-padding-x;
+  }
+}
+
+
+// scss-docs-start alert-modifiers
+// Generate contextual modifier classes for colorizing the alert.
+
+@each $state, $variant in $alert-variants {
+  @include alert-variant($state, $variant);
+}
+// scss-docs-end alert-modifiers

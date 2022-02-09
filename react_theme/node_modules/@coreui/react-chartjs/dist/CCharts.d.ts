@@ -1,0 +1,11 @@
+import React from 'react';
+import { CChartProps } from './CChart';
+import Chart from 'chart.js/auto';
+export declare const CChartBar: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartBubble: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartDoughnut: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartLine: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartPie: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartPolarArea: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartRadar: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;
+export declare const CChartScatter: React.ForwardRefExoticComponent<CChartProps & React.RefAttributes<Chart<keyof import("chart.js").ChartTypeRegistry, (number | import("chart.js").ScatterDataPoint | import("chart.js").BubbleDataPoint | null)[], unknown> | undefined>>;

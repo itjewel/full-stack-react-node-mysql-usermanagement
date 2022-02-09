@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between;
+  min-height: $footer-min-height;
+  padding: $footer-padding-y $footer-padding-x;
+  color: var(--#{$variable-prefix}footer-color, $footer-color);
+  background: var(--#{$variable-prefix}footer-bg, $footer-bg);
+  border-top: var(--#{$variable-prefix}footer-border-width, $footer-border-width) solid var(--#{$variable-prefix}footer-border-color, $footer-border-color);
+}
+
+.footer-fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+
+.footer-sticky {
+  position: sticky;
+  bottom: 0;
+  z-index: $zindex-fixed;
+}
