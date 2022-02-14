@@ -53,7 +53,6 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 const AddNewProducts = React.lazy(() => import('./views/Products/AddNewProducts'))
 const AllProducts = React.lazy(() => import('./views/Products/AllProducts'))
 
-const Users = React.lazy(() => import('./views/users/Users/Users'))
 const AddUser = React.lazy(() => import('./views/users/AddUser/AddUser'))
 const ActivityLog = React.lazy(() => import('./views/users/ActivityLog'))
 const Userslist = React.lazy(() => import('./views/users/Userslist'))
@@ -112,7 +111,7 @@ const routes = [
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/addnewproducts', name: 'AddNewProducts', component: AddNewProducts },
   { path: '/allproduct', name: 'AllProducts', component: AllProducts },
-  { path: '/users', name: 'Users', component: Users, exact: true },
+  { path: '/users', name: 'Userslist', component: Userslist, exact: true },
   { path: '/users/userslist', name: 'Userslist', component: Userslist },
   { path: '/users/adduser', name: 'AddUser', component: AddUser },
   { path: '/users/activitylog', name: 'Activity Log', component: ActivityLog },

@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import CIcon from '@coreui/icons-react'
+import * as icon from '@coreui/icons'
 import {
   CNav,
   CNavItem,
@@ -21,6 +23,7 @@ import {
   CTableHeaderCell,
   CTableBody,
   CTableDataCell,
+  CTooltip,
 } from '@coreui/react'
 
 function Roles() {
@@ -56,13 +59,35 @@ function Roles() {
                 <CTableHeaderCell scope="row">Admin</CTableHeaderCell>
                 <CTableDataCell>Admin</CTableDataCell>
                 <CTableDataCell>1</CTableDataCell>
-                <CTableDataCell>Add, Delete, Update</CTableDataCell>
+                <CTableDataCell>
+                  <CTooltip content="Update role">
+                    <CButton color="info" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilPencil} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                  <CTooltip content="Delete role">
+                    <CButton color="danger" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilDelete} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                </CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableHeaderCell scope="row">User</CTableHeaderCell>
                 <CTableDataCell>User</CTableDataCell>
                 <CTableDataCell>3</CTableDataCell>
-                <CTableDataCell>Add, Delete, Update</CTableDataCell>
+                <CTableDataCell>
+                  <CTooltip content="Update role">
+                    <CButton color="info" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilPencil} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                  <CTooltip content="Delete role">
+                    <CButton color="danger" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilDelete} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                </CTableDataCell>
               </CTableRow>
             </CTableBody>
           </CTable>

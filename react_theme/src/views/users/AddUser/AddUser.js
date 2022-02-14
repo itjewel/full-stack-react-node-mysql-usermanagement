@@ -3,15 +3,11 @@ import {
   CButton,
   CCard,
   CCardBody,
-  CCardHeader,
   CCol,
   CForm,
-  CFormCheck,
   CFormInput,
   CFormLabel,
   CFormSelect,
-  CInputGroup,
-  CInputGroupText,
   CFormTextarea,
   CRow,
 } from '@coreui/react'
@@ -72,12 +68,16 @@ const AddUser = () => {
                 <CFormLabel htmlFor="inputPassword4">Password</CFormLabel>
                 <CFormInput type="password" id="inputPassword4" />
               </CCol>
+              <CCol md={4}>
+                <CFormLabel htmlFor="inputEmail4">Date Of Birth</CFormLabel>
+                <CFormInput type="date" id="inputPassword4" />
+              </CCol>
               <CCol md={8}>
                 <CFormLabel htmlFor="inputAddress">Address</CFormLabel>
                 <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
               </CCol>
               <CCol md={12}>
-                <CButton type="submit">Submit</CButton>
+                <CButton type="submit">Create an account</CButton>
               </CCol>
             </CForm>
           </CCardBody>

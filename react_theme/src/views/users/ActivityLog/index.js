@@ -1,4 +1,6 @@
 import React from 'react'
+import CIcon from '@coreui/icons-react'
+import * as icon from '@coreui/icons'
 import {
   CTable,
   CTableHead,
@@ -6,6 +8,10 @@ import {
   CTableHeaderCell,
   CTableBody,
   CTableDataCell,
+  CPopover,
+  CButton,
+  CPagination,
+  CPaginationItem,
 } from '@coreui/react'
 function ActivityLog() {
   return (
@@ -27,7 +33,13 @@ function ActivityLog() {
           <CTableDataCell>User Updated.</CTableDataCell>
           <CTableDataCell>2022-01-16 17:08:27</CTableDataCell>
           <CTableDataCell>Not Found</CTableDataCell>
-          <CTableDataCell>Status</CTableDataCell>
+          <CTableDataCell>
+            <CPopover content="dsdsdsd dfdfdf fdfdf" placement="top">
+              <CButton color="primary" size="sm">
+                <CIcon icon={icon.cilInfo} size="xl" />
+              </CButton>
+            </CPopover>
+          </CTableDataCell>
         </CTableRow>
         <CTableRow>
           <CTableHeaderCell scope="row">Admin 123</CTableHeaderCell>
@@ -35,7 +47,13 @@ function ActivityLog() {
           <CTableDataCell>User Updated.</CTableDataCell>
           <CTableDataCell>2022-01-16 17:08:27</CTableDataCell>
           <CTableDataCell>Not Found</CTableDataCell>
-          <CTableDataCell>Status</CTableDataCell>
+          <CTableDataCell>
+            <CPopover content="dsdsdsd dfdfdf fdfdf" placement="top">
+              <CButton color="primary" size="sm">
+                <CIcon icon={icon.cilInfo} size="xl" />
+              </CButton>
+            </CPopover>
+          </CTableDataCell>
         </CTableRow>
         <CTableRow>
           <CTableHeaderCell scope="row">Admin 123</CTableHeaderCell>
@@ -43,8 +61,23 @@ function ActivityLog() {
           <CTableDataCell>User Updated.</CTableDataCell>
           <CTableDataCell>2022-01-16 17:08:27</CTableDataCell>
           <CTableDataCell>Not Found</CTableDataCell>
-          <CTableDataCell>Status</CTableDataCell>
+          <CTableDataCell>
+            <CPopover content="dsdsdsd dfdfdf fdfdf" placement="top">
+              <CButton color="primary" size="sm">
+                <CIcon icon={icon.cilInfo} size="xl" />
+              </CButton>
+            </CPopover>
+          </CTableDataCell>
         </CTableRow>
+      </CTableBody>
+      <CTableBody>
+        <CPagination align="end" aria-label="Page navigation example">
+          <CPaginationItem disabled>Previous</CPaginationItem>
+          <CPaginationItem>1</CPaginationItem>
+          <CPaginationItem>2</CPaginationItem>
+          <CPaginationItem>3</CPaginationItem>
+          <CPaginationItem>Next</CPaginationItem>
+        </CPagination>
       </CTableBody>
     </CTable>
   )

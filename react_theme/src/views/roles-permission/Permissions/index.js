@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import CIcon from '@coreui/icons-react'
+import * as icon from '@coreui/icons'
 import {
   CNav,
   CNavItem,
@@ -12,16 +14,16 @@ import {
   CForm,
   CFormLabel,
   CFormInput,
-  CFormSelect,
   CFormTextarea,
+  CFormCheck,
+  CTableDataCell,
+  CTooltip,
   CButton,
   CTable,
   CTableHead,
   CTableRow,
   CTableHeaderCell,
   CTableBody,
-  CTableDataCell,
-  CFormCheck,
 } from '@coreui/react'
 
 function Permissions() {
@@ -61,14 +63,47 @@ function Permissions() {
                 <CTableDataCell>
                   <CFormCheck id="flexCheckChecked" label="Checked checkbox" defaultChecked />
                 </CTableDataCell>
-                <CTableDataCell>Add, Delete, Update</CTableDataCell>
+                <CTableDataCell>
+                  <CTooltip content="Update permission">
+                    <CButton color="info" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilPencil} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                  <CTooltip content="Delete permission">
+                    <CButton color="danger" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilDelete} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                </CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableHeaderCell scope="row">User</CTableHeaderCell>
-                <CTableDataCell>User</CTableDataCell>
-                <CTableDataCell>3</CTableDataCell>
-                <CTableDataCell>Add, Delete, Update</CTableDataCell>
+                <CTableDataCell>
+                  <CFormCheck id="flexCheckDefault" label="Default checkbox" />
+                </CTableDataCell>
+                <CTableDataCell>
+                  <CFormCheck id="flexCheckDefault" label="Default checkbox" />
+                </CTableDataCell>
+                <CTableDataCell>
+                  <CTooltip content="Update permission">
+                    <CButton color="info" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilPencil} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                  <CTooltip content="Delete permission">
+                    <CButton color="danger" variant="ghost" size="sm">
+                      <CIcon icon={icon.cilDelete} size="xl" />
+                    </CButton>
+                  </CTooltip>
+                </CTableDataCell>
               </CTableRow>
+              <CTableDataCell>
+                <CCol md={12}>
+                  <CButton color="primary" type="submit">
+                    Save permissions
+                  </CButton>
+                </CCol>
+              </CTableDataCell>
             </CTableBody>
           </CTable>
         </CTabPane>
@@ -91,7 +126,7 @@ function Permissions() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit">Create Role</CButton>
+                      <CButton type="submit">Create Permission</CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>
