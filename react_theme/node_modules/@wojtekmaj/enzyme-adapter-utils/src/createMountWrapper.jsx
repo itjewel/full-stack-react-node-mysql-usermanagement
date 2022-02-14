@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RootFinder from './RootFinder';
 
-/* eslint-disable react/forbid-prop-types */
-
 const stringOrFunction = PropTypes.oneOfType([PropTypes.func, PropTypes.string]);
 const makeValidElementType = (adapter) => {
   if (!adapter) {
@@ -14,7 +12,7 @@ const makeValidElementType = (adapter) => {
     if (!adapter.isValidElementType) {
       return stringOrFunction.isRequired(props, propName, ...args);
     }
-    const propValue = props[propName]; // eslint-disable-line react/destructuring-assignment
+    const propValue = props[propName];
     if (adapter.isValidElementType(propValue)) {
       return null;
     }
@@ -71,11 +69,9 @@ export default function createMountWrapper(node, options = {}) {
       const { Component, refProp } = this.props;
       const { mount, props, wrappingComponentProps } = this.state;
       if (!mount) return null;
-      // eslint-disable-next-line react/jsx-props-no-spreading
       const component = <Component ref={refProp} {...props} />;
       if (WrappingComponent) {
         return (
-          // eslint-disable-next-line react/jsx-props-no-spreading
           <WrappingComponent {...wrappingComponentProps}>
             <RootFinder>{component}</RootFinder>
           </WrappingComponent>
@@ -92,7 +88,6 @@ export default function createMountWrapper(node, options = {}) {
       PropTypes.string,
       PropTypes.func,
       PropTypes.shape({
-        // eslint-disable-next-line react/forbid-prop-types
         current: PropTypes.any,
       }),
     ]),

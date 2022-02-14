@@ -1,4 +1,6 @@
 import React from 'react'
+import CIcon from '@coreui/icons-react'
+import * as icon from '@coreui/icons'
 import {
   CButton,
   CTable,
@@ -27,25 +29,63 @@ function Userslist() {
           <CTableDataCell>admin1233</CTableDataCell>
           <CTableDataCell>admin@cmsn.com</CTableDataCell>
           <CTableDataCell>
-            <CButton color="success" shape="rounded-pill">
-              Approve
+            <CButton color="success" shape="rounded-pill" variant="ghost" size="sm">
+              <CIcon icon={icon.cilCheckCircle} size="xl" />
             </CButton>
           </CTableDataCell>
-          <CTableDataCell>Add, Delete, Update</CTableDataCell>
+          <CTableDataCell>
+            <CButton color="success" variant="ghost" size="sm">
+              <CIcon icon={icon.cilNoteAdd} size="xl" />
+            </CButton>
+            <CButton color="info" variant="ghost" size="sm">
+              <CIcon icon={icon.cilPencil} size="xl" />
+            </CButton>
+            <CButton color="danger" variant="ghost" size="sm">
+              <CIcon icon={icon.cilDelete} size="xl" />
+            </CButton>
+          </CTableDataCell>
         </CTableRow>
         <CTableRow>
           <CTableHeaderCell scope="row">admin1233</CTableHeaderCell>
           <CTableDataCell>admin1233</CTableDataCell>
           <CTableDataCell>admin@cmsn.com</CTableDataCell>
-          <CTableDataCell>Status</CTableDataCell>
-          <CTableDataCell>Add, Delete, Update</CTableDataCell>
+          <CTableDataCell>
+            <CButton color="danger" shape="rounded-pill" variant="ghost" size="sm">
+              <CIcon icon={icon.cilBan} size="xl" />
+            </CButton>
+          </CTableDataCell>
+          <CTableDataCell>
+            <CButton color="success" variant="ghost" size="sm">
+              <CIcon icon={icon.cilNoteAdd} size="xl" />
+            </CButton>
+            <CButton color="info" variant="ghost" size="sm">
+              <CIcon icon={icon.cilPencil} size="xl" />
+            </CButton>
+            <CButton color="danger" variant="ghost" size="sm">
+              <CIcon icon={icon.cilDelete} size="xl" />
+            </CButton>
+          </CTableDataCell>
         </CTableRow>
         <CTableRow>
           <CTableHeaderCell scope="row">admin1233</CTableHeaderCell>
           <CTableDataCell>admin1233</CTableDataCell>
           <CTableDataCell>admin@cmsn.com</CTableDataCell>
-          <CTableDataCell>stat</CTableDataCell>
-          <CTableDataCell>Add, Delete, Update</CTableDataCell>
+          <CTableDataCell>
+            <CButton color="danger" shape="rounded-pill" variant="ghost" size="sm">
+              <CIcon icon={icon.cilBan} size="xl" />
+            </CButton>
+          </CTableDataCell>
+          <CTableDataCell>
+            <CButton color="success" variant="ghost" size="sm">
+              <CIcon icon={icon.cilNoteAdd} size="xl" />
+            </CButton>
+            <CButton color="info" variant="ghost" size="sm">
+              <CIcon icon={icon.cilPencil} size="xl" />
+            </CButton>
+            <CButton color="danger" variant="ghost" size="sm">
+              <CIcon icon={icon.cilDelete} size="xl" />
+            </CButton>
+          </CTableDataCell>
         </CTableRow>
       </CTableBody>
     </CTable>

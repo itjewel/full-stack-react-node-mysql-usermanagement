@@ -56,7 +56,7 @@ function Permissions() {
               <CTableRow>
                 <CTableHeaderCell scope="row">Admin</CTableHeaderCell>
                 <CTableDataCell>
-                  <CFormCheck id="flexCheckDefault" label="Default checkbox"/>
+                  <CFormCheck id="flexCheckDefault" label="Default checkbox" />
                 </CTableDataCell>
                 <CTableDataCell>
                   <CFormCheck id="flexCheckChecked" label="Checked checkbox" defaultChecked />
