@@ -33,12 +33,12 @@ function Roles() {
       <CNav variant="tabs" role="tablist">
         <CNavItem>
           <CNavLink href="#" active={activeKey === 1} onClick={() => setActiveKey(1)}>
-            <CIcon icon={icon.cilViewModule} size="xl" /> Roles
+            <CIcon icon={icon.cilViewModule} /> Roles
           </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#" active={activeKey === 2} onClick={() => setActiveKey(2)}>
-            <CIcon icon={icon.cilPlus} size="xl" /> Add Role
+            <CIcon icon={icon.cilPlus} /> Add Role
           </CNavLink>
         </CNavItem>
       </CNav>

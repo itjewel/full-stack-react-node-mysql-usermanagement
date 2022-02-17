@@ -33,12 +33,12 @@ function Permissions() {
       <CNav variant="tabs" role="tablist">
         <CNavItem>
           <CNavLink href="#" active={activeKey === 1} onClick={() => setActiveKey(1)}>
-            Create Permission
+            <CIcon icon={icon.cilViewModule} /> Create Permission
           </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#" active={activeKey === 2} onClick={() => setActiveKey(2)}>
-            Add Permission
+            <CIcon icon={icon.cilPlus} /> Add Permission
           </CNavLink>
         </CNavItem>
       </CNav>
@@ -71,7 +71,7 @@ function Permissions() {
                   </CTooltip>
                   <CTooltip content="Delete permission">
                     <CButton color="danger" variant="ghost" size="sm">
-                      <CIcon icon={icon.cilDelete} size="xl" />
+                      <CIcon icon={icon.cilTrash} size="xl" />
                     </CButton>
                   </CTooltip>
                 </CTableDataCell>
@@ -92,7 +92,7 @@ function Permissions() {
                   </CTooltip>
                   <CTooltip content="Delete permission">
                     <CButton color="danger" variant="ghost" size="sm">
-                      <CIcon icon={icon.cilDelete} size="xl" />
+                      <CIcon icon={icon.cilTrash} size="xl" />
                     </CButton>
                   </CTooltip>
                 </CTableDataCell>

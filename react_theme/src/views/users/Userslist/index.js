@@ -39,7 +39,7 @@ function Userslist() {
           <CTableDataCell>
             <CTooltip content="Add user">
               <CButton color="success" variant="ghost" size="sm">
-                <CIcon icon={icon.cilNoteAdd} size="xl" />
+                <CIcon icon={icon.cilLowVision} size="xl" />
               </CButton>
             </CTooltip>
             <CTooltip content="Update user">
@@ -49,7 +49,7 @@ function Userslist() {
             </CTooltip>
             <CTooltip content="Delete user">
               <CButton color="danger" variant="ghost" size="sm">
-                <CIcon icon={icon.cilDelete} size="xl" />
+                <CIcon icon={icon.cilTrash} size="xl" />
               </CButton>
             </CTooltip>
           </CTableDataCell>
@@ -68,7 +68,7 @@ function Userslist() {
           <CTableDataCell>
             <CTooltip content="Add user">
               <CButton color="success" variant="ghost" size="sm">
-                <CIcon icon={icon.cilNoteAdd} size="xl" />
+                <CIcon icon={icon.cilLowVision} size="xl" />
               </CButton>
             </CTooltip>
             <CTooltip content="Update user">
@@ -78,7 +78,7 @@ function Userslist() {
             </CTooltip>
             <CTooltip content="Delete user">
               <CButton color="danger" variant="ghost" size="sm">
-                <CIcon icon={icon.cilDelete} size="xl" />
+                <CIcon icon={icon.cilTrash} size="xl" />
               </CButton>
             </CTooltip>
           </CTableDataCell>
@@ -97,7 +97,7 @@ function Userslist() {
           <CTableDataCell>
             <CTooltip content="Add user">
               <CButton color="success" variant="ghost" size="sm">
-                <CIcon icon={icon.cilNoteAdd} size="xl" />
+                <CIcon icon={icon.cilLowVision} size="xl" />
               </CButton>
             </CTooltip>
             <CTooltip content="Update user">
@@ -107,7 +107,7 @@ function Userslist() {
             </CTooltip>
             <CTooltip content="Delete user">
               <CButton color="danger" variant="ghost" size="sm">
-                <CIcon icon={icon.cilDelete} size="xl" />
+                <CIcon icon={icon.cilTrash} size="xl" />
               </CButton>
             </CTooltip>
           </CTableDataCell>
