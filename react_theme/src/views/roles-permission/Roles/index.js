@@ -33,12 +33,12 @@ function Roles() {
       <CNav variant="tabs" role="tablist">
         <CNavItem>
           <CNavLink href="#" active={activeKey === 1} onClick={() => setActiveKey(1)}>
-            Roles
+            <CIcon icon={icon.cilViewModule} size="xl" /> Roles
           </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#" active={activeKey === 2} onClick={() => setActiveKey(2)}>
-            Add Role
+            <CIcon icon={icon.cilPlus} size="xl" /> Add Role
           </CNavLink>
         </CNavItem>
       </CNav>
@@ -67,7 +67,7 @@ function Roles() {
                   </CTooltip>
                   <CTooltip content="Delete role">
                     <CButton color="danger" variant="ghost" size="sm">
-                      <CIcon icon={icon.cilDelete} size="xl" />
+                      <CIcon icon={icon.cilTrash} size="xl" />
                     </CButton>
                   </CTooltip>
                 </CTableDataCell>
@@ -84,7 +84,7 @@ function Roles() {
                   </CTooltip>
                   <CTooltip content="Delete role">
                     <CButton color="danger" variant="ghost" size="sm">
-                      <CIcon icon={icon.cilDelete} size="xl" />
+                      <CIcon icon={icon.cilTrash} size="xl" />
                     </CButton>
                   </CTooltip>
                 </CTableDataCell>

@@ -1,20 +1,6 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
-import {
-  cilBell,
-  cilCalculator,
-  cilChartPie,
-  cilCursor,
-  cilDrop,
-  cilNotes,
-  cilPencil,
-  cilUser,
-  cilLockLocked,
-  cilSettings,
-  cilPuzzle,
-  cilSpeedometer,
-  cilStar,
-} from '@coreui/icons'
+import * as icon from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
@@ -22,12 +8,12 @@ const _nav = [
     component: CNavItem,
     name: 'Dashboard',
     to: '/dashboard',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+    icon: <CIcon icon={icon.cilSpeedometer} customClassName="nav-icon" />,
   },
   {
     component: CNavGroup,
     name: 'Users',
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
+    icon: <CIcon icon={icon.cilGroup} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -49,7 +35,7 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'Roles & Permissions',
-    icon: <CIcon icon={cilLockLocked} customClassName="nav-icon" />,
+    icon: <CIcon icon={icon.cilHttps} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
@@ -66,7 +52,7 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'Settings',
-    icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
+    icon: <CIcon icon={icon.cilSettings} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
