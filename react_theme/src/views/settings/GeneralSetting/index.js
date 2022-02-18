@@ -1,4 +1,6 @@
 import React from 'react'
+import CIcon from '@coreui/icons-react'
+import * as icon from '@coreui/icons'
 import {
   CButton,
   CCard,
@@ -60,7 +62,9 @@ function GeneralSetting() {
                 <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
               </CCol>
               <CCol md={12}>
-                <CButton type="submit">Update Settings</CButton>
+                <CButton type="submit">
+                  <CIcon icon={icon.cilSync} /> Update Settings
+                </CButton>
               </CCol>
             </CForm>
           </CCardBody>

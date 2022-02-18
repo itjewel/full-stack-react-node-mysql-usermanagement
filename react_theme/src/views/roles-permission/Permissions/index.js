@@ -100,7 +100,7 @@ function Permissions() {
               <CTableDataCell>
                 <CCol md={12}>
                   <CButton color="primary" type="submit">
-                    Save permissions
+                    <CIcon icon={icon.cilNoteAdd} /> Save permissions
                   </CButton>
                 </CCol>
               </CTableDataCell>
@@ -126,7 +126,7 @@ function Permissions() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit">Create Permission</CButton>
+                      <CButton type="submit"> Permission</CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>

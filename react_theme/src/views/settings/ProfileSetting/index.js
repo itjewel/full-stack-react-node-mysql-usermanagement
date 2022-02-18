@@ -36,22 +36,22 @@ function ProfileSetting() {
       <CNav variant="tabs" role="tablist">
         <CNavItem>
           <CNavLink href="#" active={activeKey === 1} onClick={() => setActiveKey(1)}>
-            <CIcon icon={icon.cilViewModule} /> Personal Info
+            <CIcon icon={icon.cilUser} /> Personal Info
           </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#" active={activeKey === 2} onClick={() => setActiveKey(2)}>
-            <CIcon icon={icon.cilPlus} /> Auth Info
+            <CIcon icon={icon.cilLockLocked} /> Auth Info
           </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#" active={activeKey === 3} onClick={() => setActiveKey(3)}>
-            <CIcon icon={icon.cilPlus} /> Social Network
+            <CIcon icon={icon.cilIndustry} /> Social Network
           </CNavLink>
         </CNavItem>
         <CNavItem>
           <CNavLink href="#" active={activeKey === 4} onClick={() => setActiveKey(4)}>
-            <CIcon icon={icon.cilPlus} /> Profile Picture
+            <CIcon icon={icon.cilContact} /> Profile Picture
           </CNavLink>
         </CNavItem>
       </CNav>
@@ -76,7 +76,9 @@ function ProfileSetting() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit">Create Role</CButton>
+                      <CButton type="submit">
+                        <CIcon icon={icon.cilSync} /> Create Role
+                      </CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>
@@ -103,7 +105,9 @@ function ProfileSetting() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit">Create Role</CButton>
+                      <CButton type="submit">
+                        <CIcon icon={icon.cilSync} /> Create Role
+                      </CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>
@@ -130,7 +134,9 @@ function ProfileSetting() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit">Create Role</CButton>
+                      <CButton type="submit">
+                        <CIcon icon={icon.cilSync} /> Create Role
+                      </CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>

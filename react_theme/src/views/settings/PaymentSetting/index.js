@@ -34,22 +34,30 @@ function PaymentSetting() {
         <CNav variant="tabs" role="tablist" className="flex-column">
           <CNavItem>
             <CNavLink href="#" active={activeKey === 1} onClick={() => setActiveKey(1)}>
-              <CIcon icon={icon.cilViewModule} /> Paypal Config
+              <h5>
+                <CIcon icon={icon.cibCcPaypal} size="xl" /> Paypal Configration
+              </h5>
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#" active={activeKey === 2} onClick={() => setActiveKey(2)}>
-              <CIcon icon={icon.cilPlus} /> Stripe Config
+              <h5>
+                <CIcon icon={icon.cibCcStripe} size="xl" /> Stripe Configration
+              </h5>
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#" active={activeKey === 3} onClick={() => setActiveKey(3)}>
-              <CIcon icon={icon.cilPlus} /> SSL Commrz Config
+              <h5>
+                <CIcon icon={icon.cibAdobeTypekit} size="xl" /> SSL Commrz Configration
+              </h5>
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#" active={activeKey === 4} onClick={() => setActiveKey(4)}>
-              <CIcon icon={icon.cilPlus} /> Setup Install Soft
+              <h5>
+                <CIcon icon={icon.cibCpanel} size="xl" /> Setup Install Software
+              </h5>
             </CNavLink>
           </CNavItem>
         </CNav>

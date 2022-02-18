@@ -1,4 +1,6 @@
 import React from 'react'
+import CIcon from '@coreui/icons-react'
+import * as icon from '@coreui/icons'
 import {
   CNav,
   CNavItem,
@@ -7,7 +9,7 @@ import {
   CTabPane,
   CRow,
   CCol,
-  CCard,
+  CButton,
   CCardBody,
   CForm,
   CFormLabel,
@@ -178,6 +180,12 @@ function AuthSetting() {
                   label="OFF"
                 />
               </CButtonGroup>
+            </CCol>
+            <CCol md={12}>
+              <hr />
+              <CButton type="submit">
+                <CIcon icon={icon.cilSync} /> Update Auth
+              </CButton>
             </CCol>
           </CForm>
         </CCardBody>
