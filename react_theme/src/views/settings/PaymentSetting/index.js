@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CIcon from '@coreui/icons-react'
+import './style.scss'
 import * as icon from '@coreui/icons'
 import {
   CNav,
@@ -15,15 +16,7 @@ import {
   CFormLabel,
   CFormInput,
   CFormTextarea,
-  CFormCheck,
-  CTableDataCell,
-  CTooltip,
   CButton,
-  CTable,
-  CTableHead,
-  CTableRow,
-  CTableHeaderCell,
-  CTableBody,
 } from '@coreui/react'
 
 function PaymentSetting() {
@@ -35,28 +28,28 @@ function PaymentSetting() {
           <CNavItem>
             <CNavLink href="#" active={activeKey === 1} onClick={() => setActiveKey(1)}>
               <h5>
-                <CIcon icon={icon.cibCcPaypal} size="xl" /> Paypal Configration
+                <CIcon icon={icon.cibCcPaypal} size="xxl" /> Paypal Configration
               </h5>
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#" active={activeKey === 2} onClick={() => setActiveKey(2)}>
               <h5>
-                <CIcon icon={icon.cibCcStripe} size="xl" /> Stripe Configration
+                <CIcon icon={icon.cibCcStripe} size="xxl" /> Stripe Configration
               </h5>
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#" active={activeKey === 3} onClick={() => setActiveKey(3)}>
               <h5>
-                <CIcon icon={icon.cibAdobeTypekit} size="xl" /> SSL Commrz Configration
+                <CIcon icon={icon.cibAdobeTypekit} size="xxl" /> SSL Commrz Configration
               </h5>
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#" active={activeKey === 4} onClick={() => setActiveKey(4)}>
               <h5>
-                <CIcon icon={icon.cibCpanel} size="xl" /> Setup Install Software
+                <CIcon icon={icon.cibCpanel} size="xxl" /> Setup Install Software
               </h5>
             </CNavLink>
           </CNavItem>
@@ -65,67 +58,33 @@ function PaymentSetting() {
       <CCol md={8}>
         <CTabContent>
           <CTabPane role="tabpanel" aria-labelledby="home-tab" visible={activeKey === 1}>
-            <CTable>
-              <CTableHead color="light">
-                <CTableRow>
-                  <CTableHeaderCell scope="col">Name</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Admin</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">User</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Actions</CTableHeaderCell>
-                </CTableRow>
-              </CTableHead>
-              <CTableBody>
-                <CTableRow>
-                  <CTableHeaderCell scope="row">Admin</CTableHeaderCell>
-                  <CTableDataCell>
-                    <CFormCheck id="flexCheckDefault" label="Default checkbox" />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <CFormCheck id="flexCheckChecked" label="Checked checkbox" defaultChecked />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <CTooltip content="Update permission">
-                      <CButton color="info" variant="ghost" size="sm">
-                        <CIcon icon={icon.cilPencil} size="xl" />
-                      </CButton>
-                    </CTooltip>
-                    <CTooltip content="Delete permission">
-                      <CButton color="danger" variant="ghost" size="sm">
-                        <CIcon icon={icon.cilTrash} size="xl" />
-                      </CButton>
-                    </CTooltip>
-                  </CTableDataCell>
-                </CTableRow>
-                <CTableRow>
-                  <CTableHeaderCell scope="row">User</CTableHeaderCell>
-                  <CTableDataCell>
-                    <CFormCheck id="flexCheckDefault" label="Default checkbox" />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <CFormCheck id="flexCheckDefault" label="Default checkbox" />
-                  </CTableDataCell>
-                  <CTableDataCell>
-                    <CTooltip content="Update permission">
-                      <CButton color="info" variant="ghost" size="sm">
-                        <CIcon icon={icon.cilPencil} size="xl" />
-                      </CButton>
-                    </CTooltip>
-                    <CTooltip content="Delete permission">
-                      <CButton color="danger" variant="ghost" size="sm">
-                        <CIcon icon={icon.cilTrash} size="xl" />
-                      </CButton>
-                    </CTooltip>
-                  </CTableDataCell>
-                </CTableRow>
-                <CTableDataCell>
-                  <CCol md={12}>
-                    <CButton color="primary" type="submit">
-                      Save permissions
-                    </CButton>
-                  </CCol>
-                </CTableDataCell>
-              </CTableBody>
-            </CTable>
+            <CRow>
+              <CCol xs={12}>
+                <CCard className="mb-4">
+                  <CCardBody>
+                    <CForm className="row g-3">
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail8">PAYPAL_CLIENT_ID</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">PAYPAL_SECRET</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">PAYPAL_MODE</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CButton type="submit">
+                          <CIcon icon={icon.cilSync} size="lg" /> Update Paypal Info
+                        </CButton>
+                      </CCol>
+                    </CForm>
+                  </CCardBody>
+                </CCard>
+              </CCol>
+            </CRow>
           </CTabPane>
           <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 2}>
             <CRow>
@@ -133,20 +92,18 @@ function PaymentSetting() {
                 <CCard className="mb-4">
                   <CCardBody>
                     <CForm className="row g-3">
-                      <CCol md={8}>
-                        <CFormLabel htmlFor="inputEmail8">Permission Name</CFormLabel>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail8">STRIPE_KEY</CFormLabel>
                         <CFormInput type="text" id="inputEmail4" />
-                      </CCol>
-                      <CCol md={8}>
-                        <CFormLabel htmlFor="inputEmail4">Display Name</CFormLabel>
-                        <CFormInput type="text" id="inputEmail4" />
-                      </CCol>
-                      <CCol md={8}>
-                        <CFormLabel htmlFor="inputAddress">Description</CFormLabel>
-                        <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                       </CCol>
                       <CCol md={12}>
-                        <CButton type="submit">Create Permission</CButton>
+                        <CFormLabel htmlFor="inputEmail4">STRIPE_SECRET</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CButton type="submit">
+                          <CIcon icon={icon.cilSync} size="lg" /> Update Stripe Payment
+                        </CButton>
                       </CCol>
                     </CForm>
                   </CCardBody>
@@ -155,10 +112,66 @@ function PaymentSetting() {
             </CRow>
           </CTabPane>
           <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 3}>
-            SSl Commrz
+            <CRow>
+              <CCol xs={12}>
+                <CCard className="mb-4">
+                  <CCardBody>
+                    <CForm className="row g-3">
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail8">STORE_ID</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">STORE_PASSWORD</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">STORE_PASSWORD</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CButton type="submit">
+                          <CIcon icon={icon.cilSync} size="lg" /> Update SSL Commrz
+                        </CButton>
+                      </CCol>
+                    </CForm>
+                  </CCardBody>
+                </CCard>
+              </CCol>
+            </CRow>
           </CTabPane>
           <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 4}>
-            Setup Install Soft
+            <CRow>
+              <CCol xs={12}>
+                <CCard className="mb-4">
+                  <CCardBody>
+                    <CForm className="row g-3">
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail8">Web URL</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">Cpanel Username</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">Cpanel Password</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CFormLabel htmlFor="inputEmail4">DB HOST</CFormLabel>
+                        <CFormInput type="text" id="inputEmail4" />
+                      </CCol>
+                      <CCol md={12}>
+                        <CButton type="submit">
+                          <CIcon icon={icon.cilSync} size="lg" /> Update Soft Info
+                        </CButton>
+                      </CCol>
+                    </CForm>
+                  </CCardBody>
+                </CCard>
+              </CCol>
+            </CRow>
           </CTabPane>
         </CTabContent>
       </CCol>

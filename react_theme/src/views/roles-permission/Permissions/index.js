@@ -126,7 +126,9 @@ function Permissions() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit"> Permission</CButton>
+                      <CButton type="submit">
+                        <CIcon icon={icon.cilNoteAdd} /> Add permission
+                      </CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>

@@ -111,7 +111,9 @@ function Roles() {
                       <CFormTextarea id="exampleFormControlTextarea1" rows="3"></CFormTextarea>
                     </CCol>
                     <CCol md={12}>
-                      <CButton type="submit">Create Role</CButton>
+                      <CButton type="submit">
+                        <CIcon icon={icon.cilNoteAdd} /> Create Role
+                      </CButton>
                     </CCol>
                   </CForm>
                 </CCardBody>
