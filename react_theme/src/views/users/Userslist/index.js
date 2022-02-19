@@ -13,6 +13,9 @@ import {
 } from '@coreui/react'
 
 function Userslist() {
+  const handleDelete = () => {
+    alert(123)
+  }
   return (
     <CTable>
       <CTableHead color="light">
@@ -37,7 +40,36 @@ function Userslist() {
             </CTooltip>
           </CTableDataCell>
           <CTableDataCell>
-            <CTooltip content="Add user">
+            <CTooltip content="User Details">
+              <CButton color="success" variant="ghost" size="sm">
+                <CIcon icon={icon.cilOpentype} size="xl" />
+              </CButton>
+            </CTooltip>
+            <CTooltip content="Update user">
+              <CButton color="info" variant="ghost" size="sm">
+                <CIcon icon={icon.cilPencil} size="xl" />
+              </CButton>
+            </CTooltip>
+            <CTooltip content="Delete user">
+              <CButton color="danger" variant="ghost" size="sm" onClick={handleDelete}>
+                <CIcon icon={icon.cilTrash} size="xl" />
+              </CButton>
+            </CTooltip>
+          </CTableDataCell>
+        </CTableRow>
+        <CTableRow>
+          <CTableHeaderCell scope="row">admin1233</CTableHeaderCell>
+          <CTableDataCell>admin1233</CTableDataCell>
+          <CTableDataCell>admin@cmsn.com</CTableDataCell>
+          <CTableDataCell>
+            <CTooltip content="Deactive user">
+              <CButton color="danger" shape="rounded-pill" variant="ghost" size="sm">
+                <CIcon icon={icon.cilBan} size="xl" />
+              </CButton>
+            </CTooltip>
+          </CTableDataCell>
+          <CTableDataCell>
+            <CTooltip content="User Details">
               <CButton color="success" variant="ghost" size="sm">
                 <CIcon icon={icon.cilLowVision} size="xl" />
               </CButton>
@@ -66,36 +98,7 @@ function Userslist() {
             </CTooltip>
           </CTableDataCell>
           <CTableDataCell>
-            <CTooltip content="Add user">
-              <CButton color="success" variant="ghost" size="sm">
-                <CIcon icon={icon.cilLowVision} size="xl" />
-              </CButton>
-            </CTooltip>
-            <CTooltip content="Update user">
-              <CButton color="info" variant="ghost" size="sm">
-                <CIcon icon={icon.cilPencil} size="xl" />
-              </CButton>
-            </CTooltip>
-            <CTooltip content="Delete user">
-              <CButton color="danger" variant="ghost" size="sm">
-                <CIcon icon={icon.cilTrash} size="xl" />
-              </CButton>
-            </CTooltip>
-          </CTableDataCell>
-        </CTableRow>
-        <CTableRow>
-          <CTableHeaderCell scope="row">admin1233</CTableHeaderCell>
-          <CTableDataCell>admin1233</CTableDataCell>
-          <CTableDataCell>admin@cmsn.com</CTableDataCell>
-          <CTableDataCell>
-            <CTooltip content="Deactive user">
-              <CButton color="danger" shape="rounded-pill" variant="ghost" size="sm">
-                <CIcon icon={icon.cilBan} size="xl" />
-              </CButton>
-            </CTooltip>
-          </CTableDataCell>
-          <CTableDataCell>
-            <CTooltip content="Add user">
+            <CTooltip content="User Details">
               <CButton color="success" variant="ghost" size="sm">
                 <CIcon icon={icon.cilLowVision} size="xl" />
               </CButton>

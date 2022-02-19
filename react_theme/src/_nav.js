@@ -66,13 +66,13 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Profile Setting',
-        to: '/settings/profile-setting',
+        name: 'Authentication',
+        to: '/settings/auth-setting',
       },
       {
         component: CNavItem,
-        name: 'Authentication',
-        to: '/settings/auth-setting',
+        name: 'Profile Setting',
+        to: '/settings/profile-setting',
       },
     ],
   },
