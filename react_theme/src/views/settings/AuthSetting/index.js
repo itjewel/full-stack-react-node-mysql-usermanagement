@@ -2,19 +2,12 @@ import React from 'react'
 import CIcon from '@coreui/icons-react'
 import * as icon from '@coreui/icons'
 import {
-  CNav,
-  CNavItem,
-  CNavLink,
-  CTabContent,
-  CTabPane,
   CRow,
   CCol,
   CButton,
   CCardBody,
   CForm,
   CFormLabel,
-  CFormInput,
-  CFormTextarea,
   CFormCheck,
   CButtonGroup,
 } from '@coreui/react'

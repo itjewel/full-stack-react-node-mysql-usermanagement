@@ -15,7 +15,6 @@ import {
   CForm,
   CFormLabel,
   CFormInput,
-  CFormTextarea,
   CButton,
 } from '@coreui/react'
 

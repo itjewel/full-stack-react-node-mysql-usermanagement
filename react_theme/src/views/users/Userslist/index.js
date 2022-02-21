@@ -5,7 +5,6 @@ import {
   CRow,
   CButton,
   CForm,
-  CCol,
   CTable,
   CTableHead,
   CTableRow,
@@ -13,9 +12,7 @@ import {
   CTableBody,
   CTableDataCell,
   CTooltip,
-  CInputGroup,
   CFormInput,
-  CInputGroupText,
 } from '@coreui/react'
 
 function Userslist() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import * as icon from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import { CNavGroup, CNavItem } from '@coreui/react'
 
 const _nav = [
   {
