@@ -64,6 +64,11 @@ const GeneralSetting = React.lazy(() => import('./views/settings/GeneralSetting'
 const PaymentSetting = React.lazy(() => import('./views/settings/PaymentSetting'))
 const ProfileSetting = React.lazy(() => import('./views/settings/ProfileSetting'))
 
+const EmailCategory = React.lazy(() => import('./views/email-templates/Category'))
+const EmailTemplates = React.lazy(() => import('./views/email-templates/EmailTemplates'))
+const EmailGroup = React.lazy(() => import('./views/email-templates/EmailGroup'))
+const SendEmail = React.lazy(() => import('./views/email-templates/SendEmail'))
+
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -123,6 +128,11 @@ const routes = [
   { path: '/settings/payment-setting', name: 'Payment Setting', component: PaymentSetting },
   { path: '/settings/profile-setting', name: 'Profile Setting', component: ProfileSetting },
   { path: '/settings/auth-setting', name: 'Auth Setting', component: AuthSetting },
+  { path: '/emailtemplate', name: 'Email Templates', component: EmailTemplates, exact: true },
+  { path: '/emailtemplate/email-category', name: 'Email Category', component: EmailCategory },
+  { path: '/emailtemplate/email-templates', name: 'Email Templates', component: EmailTemplates },
+  { path: '/emailtemplate/email-group', name: 'Email Group', component: EmailGroup },
+  { path: '/emailtemplate/email-send', name: 'Send Email', component: SendEmail },
 ]
 
 export default routes

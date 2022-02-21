@@ -34,6 +34,33 @@ const _nav = [
   },
   {
     component: CNavGroup,
+    name: 'Email Template',
+    icon: <CIcon icon={icon.cibMinutemailer} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Email Category',
+        to: '/emailtemplate/email-category',
+      },
+      {
+        component: CNavItem,
+        name: 'Email Template',
+        to: '/emailtemplate/email-templates',
+      },
+      {
+        component: CNavItem,
+        name: 'Email Group',
+        to: '/emailtemplate/email-group',
+      },
+      {
+        component: CNavItem,
+        name: 'Send Email',
+        to: '/emailtemplate/email-send',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
     name: 'Roles & Permissions',
     icon: <CIcon icon={icon.cilHttps} customClassName="nav-icon" />,
     items: [
