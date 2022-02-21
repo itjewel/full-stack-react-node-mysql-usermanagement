@@ -1,6 +1,7 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import * as icon from '@coreui/icons'
+import { Link } from 'react-router-dom'
 import {
   CRow,
   CButton,
@@ -22,11 +23,13 @@ function Userslist() {
   return (
     <CRow>
       <CForm className="d-grid gap-2 d-md-flex justify-content-md-end">
-        <CTooltip content="Add user">
-          <CButton color="dark" variant="outline">
-            <CIcon icon={icon.cilUserPlus} size="lg" /> Add User
-          </CButton>
-        </CTooltip>
+        <Link to="/users/adduser">
+          <CTooltip content="Add user">
+            <CButton color="dark" variant="outline">
+              <CIcon icon={icon.cilUserPlus} size="lg" /> Add User
+            </CButton>
+          </CTooltip>
+        </Link>
         <CTooltip content="Print Users">
           <CButton color="dark" variant="outline">
             <CIcon icon={icon.cilPrint} size="lg" /> Print
@@ -80,19 +83,25 @@ function Userslist() {
             </CTableDataCell>
             <CTableDataCell>
               <CTooltip content="User Details">
-                <CButton color="success" variant="ghost" size="sm">
-                  <CIcon icon={icon.cilOpentype} size="xl" />
-                </CButton>
+                <Link to="/users/details/1">
+                  <CButton color="success" variant="ghost" size="sm">
+                    <CIcon icon={icon.cilLowVision} size="xl" />
+                  </CButton>
+                </Link>
               </CTooltip>
               <CTooltip content="Update user">
-                <CButton color="info" variant="ghost" size="sm">
-                  <CIcon icon={icon.cilPencil} size="xl" />
-                </CButton>
+                <Link to="/users/details/2">
+                  <CButton color="info" variant="ghost" size="sm">
+                    <CIcon icon={icon.cilPencil} size="xl" />
+                  </CButton>
+                </Link>
               </CTooltip>
               <CTooltip content="Delete user">
-                <CButton color="danger" variant="ghost" size="sm" onClick={handleDelete}>
-                  <CIcon icon={icon.cilTrash} size="xl" />
-                </CButton>
+                <Link to="/users/details/3">
+                  <CButton color="danger" variant="ghost" size="sm" onClick={handleDelete}>
+                    <CIcon icon={icon.cilTrash} size="xl" />
+                  </CButton>
+                </Link>
               </CTooltip>
             </CTableDataCell>
           </CTableRow>
