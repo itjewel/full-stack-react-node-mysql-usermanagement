@@ -5,9 +5,9 @@ import React from 'react'
 function UsersDetails() {
   // let { id } = useParams()
   return (
-    <div>
-      <p>UsersDetails</p>
-    </div>
+    <>
+      <p> UsersDetails </p>
+    </>
   )
 }
 

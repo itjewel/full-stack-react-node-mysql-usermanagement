@@ -21,7 +21,7 @@ const AddUser = () => {
           <CCardBody>
             <CForm className="row g-3">
               <CCol md={4}>
-                <CFormLabel htmlFor="inputEmail4">First Name</CFormLabel>
+                <CFormLabel htmlFor="inputEmail4">First Name </CFormLabel>
                 <CFormInput type="text" id="inputEmail4" />
               </CCol>
               <CCol md={4}>
