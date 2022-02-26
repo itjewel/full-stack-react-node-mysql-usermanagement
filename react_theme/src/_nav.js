@@ -34,7 +34,7 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Email Template',
+    name: 'Email',
     icon: <CIcon icon={icon.cibMinutemailer} customClassName="nav-icon" />,
     items: [
       {
@@ -44,12 +44,12 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'Email Template',
+        name: 'Create Template',
         to: '/emailtemplate/email-templates',
       },
       {
         component: CNavItem,
-        name: 'Email Group',
+        name: 'Email lists',
         to: '/emailtemplate/email-group',
       },
       {
