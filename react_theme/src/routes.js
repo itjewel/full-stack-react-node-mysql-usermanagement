@@ -1,4 +1,5 @@
 import React from 'react'
+// import { useParams } from 'react-router-dom'
 
 // Working On
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
@@ -57,6 +58,7 @@ const AddUser = React.lazy(() => import('./views/users/AddUser/AddUser'))
 const ActivityLog = React.lazy(() => import('./views/users/ActivityLog'))
 const Userslist = React.lazy(() => import('./views/users/Userslist'))
 const UsersDetails = React.lazy(() => import('./views/users/UsersDetails'))
+const UpdateUser = React.lazy(() => import('./views/users/UpdateUser'))
 
 const Roles = React.lazy(() => import('./views/roles-permission/Roles'))
 const Permissions = React.lazy(() => import('./views/roles-permission/Permissions'))
@@ -118,11 +120,12 @@ const routes = [
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/addnewproducts', name: 'AddNewProducts', component: AddNewProducts },
   { path: '/allproduct', name: 'AllProducts', component: AllProducts },
-  { path: '/users', name: 'Userslist', component: Userslist, exact: true },
-  { path: '/users/userslist', name: 'Userslist', component: Userslist },
+  { path: '/users', name: 'Users', component: Userslist, exact: true },
+  { path: '/users/userslist', name: 'Users', component: Userslist },
   { path: '/users/adduser', name: 'AddUser', component: AddUser },
   { path: '/users/activitylog', name: 'Activity Log', component: ActivityLog },
-  { path: '/users/details/:id', exact: true, name: 'Users Details', component: UsersDetails },
+  { path: '/users/details/:id', name: 'Users Details', component: UsersDetails },
+  { path: '/users/edit/:id', name: 'Update', component: UpdateUser },
   { path: '/roles-permission', name: 'Roles Permission', component: Roles, exact: true },
   { path: '/roles-permission/roles', name: 'Roles', component: Roles },
   { path: '/roles-permission/permissions', name: 'Permissions', component: Permissions },

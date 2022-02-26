@@ -90,7 +90,7 @@ function Userslist() {
                 </Link>
               </CTooltip>
               <CTooltip content="Update user">
-                <Link to="/users/details/2">
+                <Link to="/users/edit/2">
                   <CButton color="info" variant="ghost" size="sm">
                     <CIcon icon={icon.cilPencil} size="xl" />
                   </CButton>
