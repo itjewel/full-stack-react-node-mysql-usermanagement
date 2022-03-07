@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CIcon from '@coreui/icons-react'
 import * as icon from '@coreui/icons'
 import { Link } from 'react-router-dom'
@@ -14,11 +14,33 @@ import {
   CTableDataCell,
   CTooltip,
   CFormInput,
+  CModal,
+  CModalHeader,
+  CModalTitle,
+  CModalBody,
+  CModalFooter,
 } from '@coreui/react'
 
 function Userslist() {
-  const handleDelete = () => {
-    alert(123)
+  const [visible, setVisible] = useState(false)
+  const handleDelete = (visible) => {
+    // console.log(visible)
+    return (
+      <CModal visible={visible} onClose={() => setVisible(false)}>
+        <CModalHeader>
+          <CModalTitle>Modal title</CModalTitle>
+        </CModalHeader>
+        <CModalBody>
+          I will not close if you click outside me. Don't even try to press escape key.
+        </CModalBody>
+        <CModalFooter>
+          <CButton color="secondary" onClick={() => setVisible(false)}>
+            Close
+          </CButton>
+          <CButton color="primary">Save changes</CButton>
+        </CModalFooter>
+      </CModal>
+    )
   }
   return (
     <CRow>
@@ -97,11 +119,14 @@ function Userslist() {
                 </Link>
               </CTooltip>
               <CTooltip content="Delete user">
-                <Link to="/users/details/3">
-                  <CButton color="danger" variant="ghost" size="sm" onClick={handleDelete}>
-                    <CIcon icon={icon.cilTrash} size="xl" />
-                  </CButton>
-                </Link>
+                <CButton
+                  color="danger"
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => handleDelete(!visible)}
+                >
+                  <CIcon icon={icon.cilTrash} size="xl" />
+                </CButton>
               </CTooltip>
             </CTableDataCell>
           </CTableRow>
